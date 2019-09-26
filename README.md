@@ -1,5 +1,5 @@
-## react-native-iconfont-cli
-用纯JS把iconfont.cn的图标转换成RN组件，不依赖字体，支持多色彩，支持热更新
+## react-iconfont-cli
+用纯JS把iconfont.cn的图标转换成React组件，不依赖字体，支持多色彩
 
 ![](https://github.com/fwh1990/react-iconfont-cli/blob/master/images/icons.png?raw=true)
 
