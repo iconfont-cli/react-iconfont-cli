@@ -6,7 +6,7 @@ console.log([
   '',
   'Usage:',
   '',
-  '    ' + colors.yellow('iconfont-init') + '       : generate config file',
-  '    ' + colors.yellow('iconfont-h5') + '            : generate icon components',
+  '    ' + colors.yellow('npx iconfont-init') + '       : generate config file',
+  '    ' + colors.yellow('npx iconfont-h5') + '         : generate icon components',
   '',
 ].join('\n'));
