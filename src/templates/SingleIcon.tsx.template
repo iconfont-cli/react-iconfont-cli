@@ -1,0 +1,21 @@
+/* tslint:disable */
+/* eslint-disable */
+
+import React, { FunctionComponent } from 'react';
+import { getIconColor } from './helper';
+
+interface Props {
+  size?: number;
+  color?: string | string[];
+}
+
+#comments#
+const #componentName#: FunctionComponent<Props> = ({ size, color, ...rest }) => {
+  return (#iconContent#  );
+};
+
+#componentName#.defaultProps = {
+  size: #size#,
+};
+
+export default #componentName#;

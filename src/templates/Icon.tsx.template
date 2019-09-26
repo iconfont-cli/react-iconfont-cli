@@ -1,0 +1,28 @@
+/* tslint:disable */
+/* eslint-disable */
+
+import React, { FunctionComponent } from 'react';
+#imports#
+
+export type IconNames = '#names#';
+
+interface Props {
+  name: IconNames;
+  size?: number;
+  color?: string | string[];
+}
+
+#comments#
+const #SummaryIcon#: FunctionComponent<Props> = ({ color, name, size, ...rest }) => {
+  switch (name) {
+#cases#
+  }
+
+  return null;
+};
+
+#SummaryIcon#.defaultProps = {
+  size: #size#,
+};
+#colorFunc#
+export default #SummaryIcon#;

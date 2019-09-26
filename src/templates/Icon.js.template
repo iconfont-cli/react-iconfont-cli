@@ -1,0 +1,19 @@
+/* eslint-disable */
+
+import React from 'react';
+#imports#
+
+#comments#
+const #SummaryIcon# = ({ color, name, size, ...rest }) => {
+  switch (name) {
+#cases#
+  }
+
+  return null;
+};
+
+#SummaryIcon#.defaultProps = {
+  size: #size#,
+};
+#colorFunc#
+export default #SummaryIcon#;
