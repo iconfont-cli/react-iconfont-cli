@@ -11,13 +11,6 @@
 <br />
 3、自动化生成图标组件，支持es6和typescript两种文件格式
 
-# 扩展
-|平台|库|
-|----|---|
-|小程序|[mini-program-iconfont-cli](https://github.com/fwh1990/mini-program-iconfont-cli)|
-|Taro|[taro-iconfont-cli](https://github.com/fwh1990/taro-iconfont-cli)|
-|React Native|[react-native-iconfont-cli](https://github.com/fwh1990/react-native-iconfont-cli)|
-
 ## Step 1
 安装插件
 ```bash
@@ -159,6 +152,15 @@ export const App = () => {
 # 修改 symbol_url 配置后执行：
 npx iconfont-h5
 ```
+
+# 扩展
+|平台|库|
+|----|---|
+|小程序|[mini-program-iconfont-cli](https://github.com/iconfont-cli/mini-program-iconfont-cli)|
+|Taro|[taro-iconfont-cli](https://github.com/iconfont-cli/taro-iconfont-cli)|
+|React Native|[react-native-iconfont-cli](https://github.com/iconfont-cli/react-native-iconfont-cli)|
+|Flutter|[flutter-iconfont-cli](https://github.com/iconfont-cli/flutter-iconfont-cli)
+
 
 --------
 
