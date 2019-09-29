@@ -4,6 +4,7 @@
   "generate_mode": "depends-on",
   "save_dir": "./snapshots/depends-on-ts",
   "trim_icon_prefix": "icon",
+  "unit": "px",
   "default_icon_size": 20,
   "summary_component_name": "CustomIcon"
 }

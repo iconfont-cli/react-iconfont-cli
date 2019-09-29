@@ -66,3 +66,7 @@ export const replaceNoColor = (content: string) => {
 export const replaceSummaryIcon = (content: string, iconName: string) => {
   return content.replace(/#SummaryIcon#/g, iconName);
 };
+
+export const replaceSizeUnit = (content: string, unit: string) => {
+  return content.replace(/\{size\}/g, `{size + '${unit}'}`);
+};

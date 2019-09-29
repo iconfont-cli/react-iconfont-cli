@@ -34,6 +34,7 @@ npx iconfont-init
     "save_dir": "./src/components/iconfont",
     "generate_mode": "all-in-one",
     "trim_icon_prefix": "icon",
+    "unit": "px",
     "default_icon_size": 18,
     "summary_component_name": "Icon"
 }
@@ -69,6 +70,9 @@ npx iconfont-init
 如果你的图标有通用的前缀，而你在使用的时候又不想重复去写，那么可以通过这种配置这个选项把前缀统一去掉。
 
 注意，这个选项只针对 `<Icon />` 组件有效
+
+### unit
+图标的单位，默认是网页常用单位`px`即像素，也推荐您在手机网页中使用自适应的`rem`单位。
 
 ### default_icon_size
 我们将为每个生成的图标组件加入默认的字体大小，当然，你也可以通过传入props的方式改变这个size值。

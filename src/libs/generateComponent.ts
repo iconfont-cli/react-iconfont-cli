@@ -17,6 +17,7 @@ import {
   replaceNoColor,
   replaceSingleIconContent,
   replaceSize,
+  replaceSizeUnit,
   replaceSummaryIcon,
   replaceToDependsComments,
   replaceToOneComments,
@@ -50,7 +51,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
     const iconIdAfterTrim = config.trim_icon_prefix
       ? iconId.replace(
         new RegExp(`^${config.trim_icon_prefix}(.+?)$`),
-        (_, value) => value.replace(/^[-_]?(.+?)$/, '$1')
+        (_, value) => value.replace(/^[-_.=+#@!~*]+(.+?)$/, '$1')
       )
       : iconId;
     const componentName = upperFirst(camelCase(iconId));
@@ -73,6 +74,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
     singleFile = replaceComponentName(singleFile, componentName);
     singleFile = replaceSingleIconContent(singleFile, generateCase(item, 4));
     singleFile = replaceToOneComments(singleFile);
+    singleFile = replaceSizeUnit(singleFile, config.unit);
 
     fs.writeFileSync(path.join(saveDir, componentName + jsxExtension), singleFile);
 
@@ -107,6 +109,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
   if (config.generate_mode === GENERATE_MODE.allInOne) {
     iconFile = replaceToDependsComments(iconFile);
     iconFile = replaceColorFunc(iconFile, jsExtension);
+    iconFile = replaceSizeUnit(iconFile, config.unit);
   } else {
     iconFile = replaceToOneComments(iconFile);
     iconFile = replaceNoColor(iconFile);
