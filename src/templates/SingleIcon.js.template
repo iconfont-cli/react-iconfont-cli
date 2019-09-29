@@ -3,8 +3,13 @@
 import React from 'react';
 import { getIconColor } from './helper';
 
-#comments#
-const #componentName# = ({ size, color, ...rest }) => {
+const DEFAULT_STYLE = {
+  display: 'block',
+};
+
+const #componentName# = ({ size, color, style, ...rest }) => {
+  style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
+
   return (#iconContent#  );
 };
 

@@ -14,13 +14,10 @@ import {
   replaceImports,
   replaceNames,
   replaceNamesArray,
-  replaceNoColor,
   replaceSingleIconContent,
   replaceSize,
   replaceSizeUnit,
   replaceSummaryIcon,
-  replaceToDependsComments,
-  replaceToOneComments,
 } from './replace';
 import { whitespace } from './whitespace';
 import { GENERATE_MODE } from './generateMode';
@@ -73,7 +70,6 @@ export const generateComponent = (data: XmlData, config: Config) => {
     singleFile = replaceSize(singleFile, config.default_icon_size);
     singleFile = replaceComponentName(singleFile, componentName);
     singleFile = replaceSingleIconContent(singleFile, generateCase(item, 4));
-    singleFile = replaceToOneComments(singleFile);
     singleFile = replaceSizeUnit(singleFile, config.unit);
 
     fs.writeFileSync(path.join(saveDir, componentName + jsxExtension), singleFile);
@@ -88,7 +84,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
     console.log(`${colors.green('√')} Generated icon "${colors.yellow(iconId)}"`);
   });
 
-  let iconFile =  getTemplate('Icon' + jsxExtension);
+  let iconFile =  getTemplate('Icon.' + config.generate_mode + jsxExtension);
 
   iconFile = replaceSize(iconFile, config.default_icon_size);
   iconFile = replaceCases(iconFile, cases);
@@ -99,7 +95,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
   } else {
     iconFile = replaceNamesArray(iconFile, names);
 
-    let typeDefinitionFile = getTemplate('Icon.d.ts');
+    let typeDefinitionFile = getTemplate(`Icon.${config.generate_mode}.d.ts`);
 
     typeDefinitionFile = replaceNames(typeDefinitionFile, names);
     typeDefinitionFile = replaceSummaryIcon(typeDefinitionFile, config.summary_component_name);
@@ -107,12 +103,8 @@ export const generateComponent = (data: XmlData, config: Config) => {
   }
 
   if (config.generate_mode === GENERATE_MODE.allInOne) {
-    iconFile = replaceToDependsComments(iconFile);
     iconFile = replaceColorFunc(iconFile, jsExtension);
     iconFile = replaceSizeUnit(iconFile, config.unit);
-  } else {
-    iconFile = replaceToOneComments(iconFile);
-    iconFile = replaceNoColor(iconFile);
   }
 
   iconFile = replaceSummaryIcon(iconFile, config.summary_component_name);
@@ -123,7 +115,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
 };
 
 const generateCase = (data: XmlData['svg']['symbol'][number], baseIdent: number) => {
-  let template = `\n${whitespace(baseIdent)}<svg viewBox="${data.$.viewBox}" width={size} height={size} {...rest}>\n`;
+  let template = `\n${whitespace(baseIdent)}<svg viewBox="${data.$.viewBox}" width={size} height={size} style={style} {...rest}>\n`;
 
   for (const domName of Object.keys(data)) {
     if (domName === '$') {

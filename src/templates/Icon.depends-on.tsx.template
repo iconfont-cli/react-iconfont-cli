@@ -1,18 +1,19 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import React, { FunctionComponent } from 'react';
+import React, { CSSProperties, DOMAttributes, FunctionComponent } from 'react';
 #imports#
 
 export type IconNames = '#names#';
 
-interface Props {
+interface Props extends DOMAttributes<SVGElement> {
   name: IconNames;
   size?: number;
   color?: string | string[];
+  style?: CSSProperties;
+  className?: string;
 }
 
-#comments#
 const #SummaryIcon#: FunctionComponent<Props> = ({ color, name, size, ...rest }) => {
   switch (name) {
 #cases#
@@ -24,5 +25,5 @@ const #SummaryIcon#: FunctionComponent<Props> = ({ color, name, size, ...rest })
 #SummaryIcon#.defaultProps = {
   size: #size#,
 };
-#colorFunc#
+
 export default #SummaryIcon#;

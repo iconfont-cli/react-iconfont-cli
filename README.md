@@ -150,6 +150,15 @@ export const App = () => {
 
 ![](https://github.com/fwh1990/react-iconfont-cli/blob/master/images/multi-color-icon.png?raw=true)
 
+### 与文字并排
+图标是块状的容器，如果您想与文字并排混合，请使用`flex`布局以保证文字和图标能对齐
+```jsx harmony
+<div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+  <span>Hello</span>
+  <Icon name="alipay" />
+</div> 
+```
+
 # 更新图标
 当您在iconfont.cn中的图标有变更时，只需更改配置`symbol_url`，然后再次执行`Step 3`即可生成最新的图标组件
 ```bash

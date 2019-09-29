@@ -1,4 +1,3 @@
-import { GENERATE_MODE } from './generateMode';
 import { getTemplate } from './getTemplate';
 
 export const replaceSize = (content: string, size: number) => {
@@ -34,22 +33,6 @@ export const replaceImports = (content: string, imports: string[]) => {
   return content.replace(/#imports#/g, imports.map((item) => `import ${item} from './${item}';`).join('\n'));
 };
 
-export const replaceToOneComments = (content: string) => {
-  return content.replace(/#comments#/g,
-    '// If you don\'t like lots of icon files in your project,\n' +
-    `// try to set generate_mode to "${GENERATE_MODE.allInOne}" in root file "iconfont.json".\n` +
-    '// And then regenerate icons by using cli command.'
-  );
-};
-
-export const replaceToDependsComments = (content: string) => {
-  return content.replace(/#comments#/g,
-    '// If you don\'t want to make all icons in one file,\n' +
-    `// try to set generate_mode to "${GENERATE_MODE.dependsOn}" in root file "iconfont.json".\n` +
-    '// And then regenerate icons by using cli command.'
-  );
-};
-
 export const replaceColorFunc = (content: string, extension: string) => {
   return content.replace(
     /#colorFunc#/,
@@ -57,10 +40,6 @@ export const replaceColorFunc = (content: string, extension: string) => {
       .replace(/export\s+/g, '')
       .replace(/\/\*\s.+?\s\*\/\n/g, '')
   );
-};
-
-export const replaceNoColor = (content: string) => {
-  return content.replace(/#colorFunc#/g, '');
 };
 
 export const replaceSummaryIcon = (content: string, iconName: string) => {

@@ -1,22 +1,21 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import React, { FunctionComponent } from 'react';
+import React, { CSSProperties, DOMAttributes, FunctionComponent } from 'react';
 import IconAlipay from './IconAlipay';
 import IconUser from './IconUser';
 import IconSetup from './IconSetup';
 
 export type IconNames = 'alipay' | 'user' | 'setup';
 
-interface Props {
+interface Props extends DOMAttributes<SVGElement> {
   name: IconNames;
   size?: number;
   color?: string | string[];
+  style?: CSSProperties;
+  className?: string;
 }
 
-// If you don't like lots of icon files in your project,
-// try to set generate_mode to "all-in-one" in root file "iconfont.json".
-// And then regenerate icons by using cli command.
 const CustomIcon: FunctionComponent<Props> = ({ color, name, size, ...rest }) => {
   switch (name) {
     case 'alipay':

@@ -3,12 +3,15 @@
 import React from 'react';
 import { getIconColor } from './helper';
 
-// If you don't like lots of icon files in your project,
-// try to set generate_mode to "all-in-one" in root file "iconfont.json".
-// And then regenerate icons by using cli command.
-const IconAlipay = ({ size, color, ...rest }) => {
+const DEFAULT_STYLE = {
+  display: 'block',
+};
+
+const IconAlipay = ({ size, color, style, ...rest }) => {
+  style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
+
   return (
-    <svg viewBox="0 0 1024 1024" width={size + 'rem'} height={size + 'rem'} {...rest}>
+    <svg viewBox="0 0 1024 1024" width={size + 'rem'} height={size + 'rem'} style={style} {...rest}>
       <path
         d="M192 692.736c0-69.632 51.2-106.496 88.064-111.104 111.104-18.432 264.192 74.24 264.192 74.24-69.632 88.064-166.912 134.144-241.152 134.144-65.024-4.608-111.104-41.472-111.104-97.28z"
         fill={getIconColor(color, 0, '#5B8BD4')}

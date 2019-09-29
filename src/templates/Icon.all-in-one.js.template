@@ -1,0 +1,24 @@
+/* eslint-disable */
+
+import React from 'react';
+#imports#
+
+const DEFAULT_STYLE = {
+  display: 'block',
+};
+
+const #SummaryIcon# = ({ color, name, size, style, ...rest }) => {
+  style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
+
+  switch (name) {
+#cases#
+  }
+
+  return null;
+};
+
+#SummaryIcon#.defaultProps = {
+  size: #size#,
+};
+#colorFunc#
+export default #SummaryIcon#;

@@ -2,9 +2,12 @@
 /* eslint-disable */
 
 import React, { CSSProperties, DOMAttributes, FunctionComponent } from 'react';
-import { getIconColor } from './helper';
+#imports#
+
+export type IconNames = '#names#';
 
 interface Props extends DOMAttributes<SVGElement> {
+  name: IconNames;
   size?: number;
   color?: string | string[];
   style?: CSSProperties;
@@ -15,14 +18,18 @@ const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-const #componentName#: FunctionComponent<Props> = ({ size, color, style, ...rest }) => {
+const #SummaryIcon#: FunctionComponent<Props> = ({ color, name, size, style, ...rest }) => {
   style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
 
-  return (#iconContent#  );
+  switch (name) {
+#cases#
+  }
+
+  return null;
 };
 
-#componentName#.defaultProps = {
+#SummaryIcon#.defaultProps = {
   size: #size#,
 };
-
-export default #componentName#;
+#colorFunc#
+export default #SummaryIcon#;
