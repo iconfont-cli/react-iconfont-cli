@@ -15,8 +15,8 @@ const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-const IconSetup: FunctionComponent<Props> = ({ size, color, style, ...rest }) => {
-  style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
+const IconSetup: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
+  const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
     <svg viewBox="0 0 1024 1024" width={size + 'px'} height={size + 'px'} style={style} {...rest}>

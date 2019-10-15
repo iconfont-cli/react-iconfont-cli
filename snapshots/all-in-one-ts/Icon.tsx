@@ -18,8 +18,8 @@ const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-const Icon: FunctionComponent<Props> = ({ color, name, size, style, ...rest }) => {
-  style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
+const Icon: FunctionComponent<Props> = ({ color, name, size, style: _style, ...rest }) => {
+  const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   switch (name) {
     case 'alipay':

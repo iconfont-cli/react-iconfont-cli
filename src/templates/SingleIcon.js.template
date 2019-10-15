@@ -7,8 +7,8 @@ const DEFAULT_STYLE = {
   display: 'block',
 };
 
-const #componentName# = ({ size, color, style, ...rest }) => {
-  style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
+const #componentName# = ({ size, color, style: _style, ...rest }) => {
+  const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (#iconContent#  );
 };

@@ -7,8 +7,8 @@ const DEFAULT_STYLE = {
   display: 'block',
 };
 
-const #SummaryIcon# = ({ color, name, size, style, ...rest }) => {
-  style = style ? { ...DEFAULT_STYLE, ...style } : DEFAULT_STYLE;
+const #SummaryIcon# = ({ color, name, size, style: _style, ...rest }) => {
+  const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   switch (name) {
 #cases#
