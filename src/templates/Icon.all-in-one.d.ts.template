@@ -10,6 +10,6 @@ interface Props extends DOMAttributes<SVGElement> {
   className?: string;
 }
 
-declare const #SummaryIcon#: FunctionComponent<Props>;
+export declare const #SummaryIcon#: FunctionComponent<Props>;
 
-export = #SummaryIcon#;
+export default #SummaryIcon#;

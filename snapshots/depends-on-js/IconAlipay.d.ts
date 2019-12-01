@@ -9,6 +9,6 @@ interface Props extends DOMAttributes<SVGElement> {
   className?: string;
 }
 
-declare const IconAlipay: FunctionComponent<Props>;
+export declare const IconAlipay: FunctionComponent<Props>;
 
-export = IconAlipay;
+export default IconAlipay;

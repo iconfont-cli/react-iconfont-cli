@@ -15,7 +15,7 @@ const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-const IconAlipay: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
+export const IconAlipay: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (

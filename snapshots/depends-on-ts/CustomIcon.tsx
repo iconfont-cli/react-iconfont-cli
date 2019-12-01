@@ -16,7 +16,7 @@ interface Props extends DOMAttributes<SVGElement> {
   className?: string;
 }
 
-const CustomIcon: FunctionComponent<Props> = ({ color, name, size, ...rest }) => {
+export const CustomIcon: FunctionComponent<Props> = ({ color, name, size, ...rest }) => {
   switch (name) {
     case 'alipay':
       return <IconAlipay size={size} color={color} {...rest} />;

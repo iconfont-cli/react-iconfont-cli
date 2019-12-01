@@ -9,6 +9,6 @@ interface Props extends DOMAttributes<SVGElement> {
   className?: string;
 }
 
-declare const IconSetup: FunctionComponent<Props>;
+export declare const IconSetup: FunctionComponent<Props>;
 
-export = IconSetup;
+export default IconSetup;
