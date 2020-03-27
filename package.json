@@ -1,6 +1,6 @@
 {
   "name": "react-iconfont-cli",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "main": "index.js",
   "keywords": [
     "iconfont",
@@ -23,7 +23,6 @@
   },
   "dependencies": {
     "colors": "^1.3.3",
-    "fs-extra": "^8.1.0",
     "glob": "^7.1.4",
     "iconfont-parser": "^1.0.0",
     "lodash": "^4.17.15",
