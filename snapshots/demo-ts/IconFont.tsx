@@ -16,22 +16,18 @@ interface Props extends DOMAttributes<SVGElement> {
   className?: string;
 }
 
-export const CustomIcon: FunctionComponent<Props> = ({ color, name, size, ...rest }) => {
+export const IconFont: FunctionComponent<Props> = ({ name, ...rest }) => {
   switch (name) {
     case 'alipay':
-      return <IconAlipay size={size} color={color} {...rest} />;
+      return <IconAlipay {...rest} />;
     case 'user':
-      return <IconUser size={size} color={color} {...rest} />;
+      return <IconUser {...rest} />;
     case 'setup':
-      return <IconSetup size={size} color={color} {...rest} />;
+      return <IconSetup {...rest} />;
 
   }
 
   return null;
 };
 
-CustomIcon.defaultProps = {
-  size: 20,
-};
-
-export default CustomIcon;
+export default IconFont;

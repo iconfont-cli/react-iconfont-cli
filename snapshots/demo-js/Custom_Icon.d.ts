@@ -3,13 +3,13 @@
 import { CSSProperties, DOMAttributes, FunctionComponent } from 'react';
 
 interface Props extends DOMAttributes<SVGElement> {
-  name: '#names#';
+  name: 'alipay' | 'user' | 'setup';
   size?: number;
   color?: string | string[];
   style?: CSSProperties;
   className?: string;
 }
 
-export declare const #SummaryIcon#: FunctionComponent<Props>;
+export declare const Custom_Icon: FunctionComponent<Props>;
 
-export default #SummaryIcon#;
+export default Custom_Icon;

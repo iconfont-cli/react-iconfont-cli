@@ -9,7 +9,6 @@ import { Config } from './getConfig';
 import { getTemplate } from './getTemplate';
 import {
   replaceCases,
-  replaceColorFunc,
   replaceComponentName,
   replaceImports,
   replaceNames,
@@ -20,7 +19,7 @@ import {
   replaceSummaryIcon,
 } from './replace';
 import { whitespace } from './whitespace';
-import { GENERATE_MODE } from './generateMode';
+import { copyTemplate } from './copyTemplate';
 
 const ATTRIBUTE_FILL_MAP = ['path'];
 
@@ -35,11 +34,9 @@ export const generateComponent = (data: XmlData, config: Config) => {
   mkdirp.sync(saveDir);
   glob.sync(path.join(saveDir, '*')).forEach((file) => fs.unlinkSync(file));
 
-  if (config.generate_mode === GENERATE_MODE.dependsOn) {
-    fs.copyFileSync(
-      path.join(__dirname, '..', 'templates', `helper${jsExtension}.template`),
-      path.join(saveDir, `helper${jsExtension}`),
-    );
+  copyTemplate(`helper${jsExtension}`, path.join(saveDir, `helper${jsExtension}`));
+  if (!config.use_typescript) {
+    copyTemplate('helper.d.ts', path.join(saveDir, 'helper.d.ts'));
   }
 
   data.svg.symbol.forEach((item) => {
@@ -57,14 +54,8 @@ export const generateComponent = (data: XmlData, config: Config) => {
 
     cases += `${whitespace(4)}case '${iconIdAfterTrim}':\n`;
 
-    if (config.generate_mode === GENERATE_MODE.allInOne) {
-      cases += `${whitespace(6)}return (${generateCase(item, 8)}${whitespace(6)});\n`;
-
-      return;
-    }
-
     imports.push(componentName);
-    cases += `${whitespace(6)}return <${componentName} size={size} color={color} {...rest} />;\n`;
+    cases += `${whitespace(6)}return <${componentName} {...rest} />;\n`;
 
     singleFile = getTemplate('SingleIcon' + jsxExtension);
     singleFile = replaceSize(singleFile, config.default_icon_size);
@@ -84,9 +75,8 @@ export const generateComponent = (data: XmlData, config: Config) => {
     console.log(`${colors.green('√')} Generated icon "${colors.yellow(iconId)}"`);
   });
 
-  let iconFile =  getTemplate('Icon.' + config.generate_mode + jsxExtension);
+  let iconFile =  getTemplate('Icon' + jsxExtension);
 
-  iconFile = replaceSize(iconFile, config.default_icon_size);
   iconFile = replaceCases(iconFile, cases);
   iconFile = replaceImports(iconFile, imports);
 
@@ -95,16 +85,11 @@ export const generateComponent = (data: XmlData, config: Config) => {
   } else {
     iconFile = replaceNamesArray(iconFile, names);
 
-    let typeDefinitionFile = getTemplate(`Icon.${config.generate_mode}.d.ts`);
+    let typeDefinitionFile = getTemplate(`Icon.d.ts`);
 
     typeDefinitionFile = replaceNames(typeDefinitionFile, names);
     typeDefinitionFile = replaceSummaryIcon(typeDefinitionFile, config.summary_component_name);
     fs.writeFileSync(path.join(saveDir, config.summary_component_name + '.d.ts'), typeDefinitionFile);
-  }
-
-  if (config.generate_mode === GENERATE_MODE.allInOne) {
-    iconFile = replaceColorFunc(iconFile, jsExtension);
-    iconFile = replaceSizeUnit(iconFile, config.unit);
   }
 
   iconFile = replaceSummaryIcon(iconFile, config.summary_component_name);

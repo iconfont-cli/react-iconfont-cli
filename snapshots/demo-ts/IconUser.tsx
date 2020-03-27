@@ -1,13 +1,21 @@
+/* tslint:disable */
 /* eslint-disable */
 
-import React from 'react';
+import React, { CSSProperties, DOMAttributes, FunctionComponent } from 'react';
 import { getIconColor } from './helper';
 
-const DEFAULT_STYLE = {
+interface Props extends DOMAttributes<SVGElement> {
+  size?: number;
+  color?: string | string[];
+  style?: CSSProperties;
+  className?: string;
+}
+
+const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-export const IconUser = ({ size, color, style: _style, ...rest }) => {
+export const IconUser: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
@@ -25,7 +33,7 @@ export const IconUser = ({ size, color, style: _style, ...rest }) => {
 };
 
 IconUser.defaultProps = {
-  size: 18,
+  size: 16,
 };
 
 export default IconUser;

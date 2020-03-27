@@ -1,5 +1,3 @@
-import { getTemplate } from './getTemplate';
-
 export const replaceSize = (content: string, size: number) => {
   return content.replace(/#size#/g, String(size));
 };
@@ -31,15 +29,6 @@ export const replaceSingleIconContent = (content: string, render: string) => {
 
 export const replaceImports = (content: string, imports: string[]) => {
   return content.replace(/#imports#/g, imports.map((item) => `import ${item} from './${item}';`).join('\n'));
-};
-
-export const replaceColorFunc = (content: string, extension: string) => {
-  return content.replace(
-    /#colorFunc#/,
-    getTemplate(`helper${extension}`)
-      .replace(/export\s+/g, '')
-      .replace(/\/\*\s.+?\s\*\/\n/g, '')
-  );
 };
 
 export const replaceSummaryIcon = (content: string, iconName: string) => {

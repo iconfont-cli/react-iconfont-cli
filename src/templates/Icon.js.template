@@ -3,16 +3,12 @@
 import React from 'react';
 #imports#
 
-export const #SummaryIcon# = ({ color, name, size, ...rest }) => {
+export const #SummaryIcon# = ({ name, ...rest }) => {
   switch (name) {
 #cases#
   }
 
   return null;
-};
-
-#SummaryIcon#.defaultProps = {
-  size: #size#,
 };
 
 export default #SummaryIcon#;

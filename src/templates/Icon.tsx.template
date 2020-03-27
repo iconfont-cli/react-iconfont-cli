@@ -14,16 +14,12 @@ interface Props extends DOMAttributes<SVGElement> {
   className?: string;
 }
 
-export const #SummaryIcon#: FunctionComponent<Props> = ({ color, name, size, ...rest }) => {
+export const #SummaryIcon#: FunctionComponent<Props> = ({ name, ...rest }) => {
   switch (name) {
 #cases#
   }
 
   return null;
-};
-
-#SummaryIcon#.defaultProps = {
-  size: #size#,
 };
 
 export default #SummaryIcon#;
