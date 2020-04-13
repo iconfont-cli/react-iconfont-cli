@@ -14,7 +14,7 @@ interface Props extends DOMAttributes<SVGElement> {
   className?: string;
 }
 
-export const IconFont: FunctionComponent<Props> = ({ name, ...rest }) => {
+const IconFont: FunctionComponent<Props> = ({ name, ...rest }) => {
   switch (name) {
 #cases#
   }
