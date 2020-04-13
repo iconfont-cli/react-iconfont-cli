@@ -4,6 +4,5 @@
   "save_dir": "./snapshots/demo-ts",
   "trim_icon_prefix": "icon",
   "unit": "rem",
-  "default_icon_size": 16,
-  "summary_component_name": "IconFont"
+  "default_icon_size": 16
 }

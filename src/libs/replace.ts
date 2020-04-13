@@ -31,10 +31,6 @@ export const replaceImports = (content: string, imports: string[]) => {
   return content.replace(/#imports#/g, imports.map((item) => `import ${item} from './${item}';`).join('\n'));
 };
 
-export const replaceSummaryIcon = (content: string, iconName: string) => {
-  return content.replace(/#SummaryIcon#/g, iconName);
-};
-
 export const replaceSizeUnit = (content: string, unit: string) => {
   return content.replace(/\{size\}/g, `{size + '${unit}'}`);
 };

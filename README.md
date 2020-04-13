@@ -34,8 +34,7 @@ npx iconfont-init
     "save_dir": "./src/components/iconfont",
     "trim_icon_prefix": "icon",
     "unit": "px",
-    "default_icon_size": 18,
-    "summary_component_name": "Icon"
+    "default_icon_size": 18
 }
 ```
 ### 配置参数说明：
@@ -65,10 +64,6 @@ npx iconfont-init
 ### default_icon_size
 我们将为每个生成的图标组件加入默认的字体大小，当然，你也可以通过传入props的方式改变这个size值。
 
-
-### summary_component_name
-就是汇总组件的名称，默认名称为`Icon`，您也可以改成`IconFont`或者您喜欢的名字。记住，它是一个变量名，您必须遵守Javascript中关于变量的语法规则。以及作为组件名，请尽量以大写字母开头。
-
 # Step 3
 开始生成React标准组件
 ```bash
@@ -84,7 +79,7 @@ npx iconfont-h5
 1、使用汇总`Icon`组件：
 ```typescript jsx
 import React from 'react';
-import Icon from '../src/iconfont/Icon';
+import Icon from '../src/iconfont';
 
 export const App = () => {
   return (

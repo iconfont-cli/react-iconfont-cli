@@ -16,7 +16,6 @@ import {
   replaceSingleIconContent,
   replaceSize,
   replaceSizeUnit,
-  replaceSummaryIcon,
 } from './replace';
 import { whitespace } from './whitespace';
 import { copyTemplate } from './copyTemplate';
@@ -88,13 +87,10 @@ export const generateComponent = (data: XmlData, config: Config) => {
     let typeDefinitionFile = getTemplate(`Icon.d.ts`);
 
     typeDefinitionFile = replaceNames(typeDefinitionFile, names);
-    typeDefinitionFile = replaceSummaryIcon(typeDefinitionFile, config.summary_component_name);
-    fs.writeFileSync(path.join(saveDir, config.summary_component_name + '.d.ts'), typeDefinitionFile);
+    fs.writeFileSync(path.join(saveDir, 'index.d.ts'), typeDefinitionFile);
   }
 
-  iconFile = replaceSummaryIcon(iconFile, config.summary_component_name);
-
-  fs.writeFileSync(path.join(saveDir, config.summary_component_name + jsxExtension), iconFile);
+  fs.writeFileSync(path.join(saveDir, 'index' + jsxExtension), iconFile);
 
   console.log(`\n${colors.green('√')} All icons have putted into dir: ${colors.green(config.save_dir)}\n`);
 };
