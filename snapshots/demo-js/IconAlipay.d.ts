@@ -1,12 +1,10 @@
 /* eslint-disable */
 
-import { CSSProperties, DOMAttributes, FunctionComponent } from 'react';
+import { SVGAttributes, FunctionComponent } from 'react';
 
-interface Props extends DOMAttributes<SVGElement> {
+interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   size?: number;
   color?: string | string[];
-  style?: CSSProperties;
-  className?: string;
 }
 
 declare const IconAlipay: FunctionComponent<Props>;

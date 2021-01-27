@@ -1,17 +1,15 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import React, { CSSProperties, DOMAttributes, FunctionComponent } from 'react';
+import React, { SVGAttributes, FunctionComponent } from 'react';
 #imports#
 
 export type IconNames = '#names#';
 
-interface Props extends DOMAttributes<SVGElement> {
+interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   name: IconNames;
   size?: number;
   color?: string | string[];
-  style?: CSSProperties;
-  className?: string;
 }
 
 const IconFont: FunctionComponent<Props> = ({ name, ...rest }) => {
