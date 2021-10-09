@@ -3,6 +3,7 @@
 
 import React, { SVGAttributes, FunctionComponent } from 'react';
 #imports#
+#exports#
 
 export type IconNames = '#names#';
 

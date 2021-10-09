@@ -34,3 +34,9 @@ export const replaceImports = (content: string, imports: string[]) => {
 export const replaceSizeUnit = (content: string, unit: string) => {
   return content.replace(/\{size\}/g, `{size + '${unit}'}`);
 };
+
+export const replaceExports = (content: string, exports: string[]) => {
+  return content.replace(/#exports#/g, exports.map(
+    (item) => `export { default as ${item} } from './${item}';`).join('\n')
+  );
+}

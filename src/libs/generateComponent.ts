@@ -10,6 +10,7 @@ import { getTemplate } from './getTemplate';
 import {
   replaceCases,
   replaceComponentName,
+  replaceExports,
   replaceImports,
   replaceNames,
   replaceNamesArray,
@@ -78,6 +79,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
 
   iconFile = replaceCases(iconFile, cases);
   iconFile = replaceImports(iconFile, imports);
+  iconFile = replaceExports(iconFile, imports);
 
   if (config.use_typescript) {
     iconFile = replaceNames(iconFile, names);
@@ -86,6 +88,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
 
     let typeDefinitionFile = getTemplate(`Icon.d.ts`);
 
+    typeDefinitionFile = replaceExports(typeDefinitionFile, imports);
     typeDefinitionFile = replaceNames(typeDefinitionFile, names);
     fs.writeFileSync(path.join(saveDir, 'index.d.ts'), typeDefinitionFile);
   }
