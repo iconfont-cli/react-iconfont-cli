@@ -142,10 +142,10 @@ const addAttribute = (domName: string, sub: XmlData['svg']['symbol'][number]['pa
 
     for (const attributeName of Object.keys(sub.$)) {
       if (attributeName === 'fill') {
-        template += `\n${whitespace(counter.baseIdent + 4)}${attributeName}={getIconColor(color, ${counter.colorIndex}, '${sub.$[attributeName]}')}`;
+        template += `\n${whitespace(counter.baseIdent + 4)}${camelCase(attributeName)}={getIconColor(color, ${counter.colorIndex}, '${sub.$[attributeName]}')}`;
         counter.colorIndex += 1;
       } else {
-        template += `\n${whitespace(counter.baseIdent + 4)}${attributeName}="${sub.$[attributeName]}"`;
+        template += `\n${whitespace(counter.baseIdent + 4)}${camelCase(attributeName)}="${sub.$[attributeName]}"`;
       }
     }
   }
