@@ -10,8 +10,8 @@ interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
 }
 
 const DEFAULT_STYLE: CSSProperties = {
-  display: 'block',
-};
+ "display": "block"
+}
 
 const IconSetup: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;

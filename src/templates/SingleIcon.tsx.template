@@ -9,9 +9,7 @@ interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   color?: string | string[];
 }
 
-const DEFAULT_STYLE: CSSProperties = {
-  display: 'block',
-};
+const DEFAULT_STYLE: CSSProperties = #defaultStyle#
 
 const #componentName#: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;

@@ -10,6 +10,7 @@ import { getTemplate } from './getTemplate';
 import {
   replaceCases,
   replaceComponentName,
+  replaceDefaultStyle,
   replaceExports,
   replaceImports,
   replaceNames,
@@ -30,6 +31,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
   const jsxExtension = config.use_typescript ? '.tsx' : '.js';
   const jsExtension = config.use_typescript ? '.ts' : '.js';
   let cases: string = '';
+
 
   mkdirp.sync(saveDir);
   glob.sync(path.join(saveDir, '*')).forEach((file) => fs.unlinkSync(file));
@@ -62,6 +64,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
     singleFile = replaceComponentName(singleFile, componentName);
     singleFile = replaceSingleIconContent(singleFile, generateCase(item, 4));
     singleFile = replaceSizeUnit(singleFile, config.unit);
+    singleFile = replaceDefaultStyle(singleFile, config.default_style);
 
     fs.writeFileSync(path.join(saveDir, componentName + jsxExtension), singleFile);
 
