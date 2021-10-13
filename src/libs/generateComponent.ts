@@ -32,7 +32,6 @@ export const generateComponent = (data: XmlData, config: Config) => {
   const jsExtension = config.use_typescript ? '.ts' : '.js';
   let cases: string = '';
 
-  console.log('debug', config)
 
   mkdirp.sync(saveDir);
   glob.sync(path.join(saveDir, '*')).forEach((file) => fs.unlinkSync(file));
