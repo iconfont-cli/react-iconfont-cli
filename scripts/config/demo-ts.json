@@ -6,7 +6,6 @@
   "unit": "rem",
   "default_icon_size": 16,
   "default_style": {
-    "display": "block",
-    "color": "red"
+    "display": "block"
   }
 }
