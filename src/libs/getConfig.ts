@@ -10,6 +10,7 @@ export interface Config {
   trim_icon_prefix: string;
   unit: string;
   default_icon_size: number;
+  default_style: Record<string, string>;
 }
 
 let cacheConfig: Config;

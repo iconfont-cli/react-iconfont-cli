@@ -4,8 +4,8 @@ import React from 'react';
 import { getIconColor } from './helper';
 
 const DEFAULT_STYLE = {
-  display: 'block',
-};
+ "display": "inline-block"
+}
 
 const IconSetup = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;

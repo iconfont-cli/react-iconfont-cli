@@ -4,5 +4,8 @@
   "save_dir": "./snapshots/demo-js",
   "trim_icon_prefix": "icon",
   "unit": "px",
-  "default_icon_size": 14
+  "default_icon_size": 14,
+  "default_style": {
+    "display": "inline-block"
+  }
 }

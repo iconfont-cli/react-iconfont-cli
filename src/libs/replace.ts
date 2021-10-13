@@ -40,3 +40,9 @@ export const replaceExports = (content: string, exports: string[]) => {
     (item) => `export { default as ${item} } from './${item}';`).join('\n')
   );
 }
+
+export const replaceDefaultStyle = (content: string, defaultStyle: Record<string, string>) => {
+  return content.replace(/#defaultStyle#/g, JSON.stringify(defaultStyle, null, " ") || `{
+    "display": "block",
+  }`)
+};
