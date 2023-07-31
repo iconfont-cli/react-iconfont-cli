@@ -7,7 +7,7 @@ const DEFAULT_STYLE = {
   display: 'block',
 };
 
-const IconSetup = ({ size, color, style: _style, ...rest }) => {
+const IconFontIconSetup = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
@@ -60,8 +60,8 @@ const IconSetup = ({ size, color, style: _style, ...rest }) => {
   );
 };
 
-IconSetup.defaultProps = {
+IconFontIconSetup.defaultProps = {
   size: 14,
 };
 
-export default IconSetup;
+export default IconFontIconSetup;
