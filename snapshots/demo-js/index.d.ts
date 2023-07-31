@@ -1,9 +1,9 @@
 /* eslint-disable */
 
 import { SVGAttributes, FunctionComponent } from 'react';
-export { default as IconAlipay } from './IconAlipay';
-export { default as IconUser } from './IconUser';
-export { default as IconSetup } from './IconSetup';
+export { default as IconFontIconAlipay } from './IconFontIconAlipay';
+export { default as IconFontIconUser } from './IconFontIconUser';
+export { default as IconFontIconSetup } from './IconFontIconSetup';
 
 interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   name: 'alipay' | 'user' | 'setup';

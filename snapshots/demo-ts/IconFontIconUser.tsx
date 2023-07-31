@@ -13,7 +13,7 @@ const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-const IconUser: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
+const IconFontIconUser: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
@@ -30,8 +30,8 @@ const IconUser: FunctionComponent<Props> = ({ size, color, style: _style, ...res
   );
 };
 
-IconUser.defaultProps = {
+IconFontIconUser.defaultProps = {
   size: 16,
 };
 
-export default IconUser;
+export default IconFontIconUser;

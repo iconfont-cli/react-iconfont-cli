@@ -13,7 +13,7 @@ const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-const IconAlipay: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
+const IconFontIconAlipay: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
@@ -30,8 +30,8 @@ const IconAlipay: FunctionComponent<Props> = ({ size, color, style: _style, ...r
   );
 };
 
-IconAlipay.defaultProps = {
+IconFontIconAlipay.defaultProps = {
   size: 16,
 };
 
-export default IconAlipay;
+export default IconFontIconAlipay;

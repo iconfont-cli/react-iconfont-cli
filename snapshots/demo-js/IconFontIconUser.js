@@ -7,7 +7,7 @@ const DEFAULT_STYLE = {
   display: 'block',
 };
 
-const IconUser = ({ size, color, style: _style, ...rest }) => {
+const IconFontIconUser = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
@@ -24,8 +24,8 @@ const IconUser = ({ size, color, style: _style, ...rest }) => {
   );
 };
 
-IconUser.defaultProps = {
+IconFontIconUser.defaultProps = {
   size: 14,
 };
 
-export default IconUser;
+export default IconFontIconUser;

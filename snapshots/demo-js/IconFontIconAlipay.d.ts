@@ -7,6 +7,6 @@ interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   color?: string | string[];
 }
 
-declare const IconUser: FunctionComponent<Props>;
+declare const IconFontIconAlipay: FunctionComponent<Props>;
 
-export default IconUser;
+export default IconFontIconAlipay;

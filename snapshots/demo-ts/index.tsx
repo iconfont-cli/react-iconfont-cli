@@ -2,12 +2,12 @@
 /* eslint-disable */
 
 import React, { SVGAttributes, FunctionComponent } from 'react';
-import IconAlipay from './IconAlipay';
-import IconUser from './IconUser';
-import IconSetup from './IconSetup';
-export { default as IconAlipay } from './IconAlipay';
-export { default as IconUser } from './IconUser';
-export { default as IconSetup } from './IconSetup';
+import IconFontIconAlipay from './IconFontIconAlipay';
+import IconFontIconUser from './IconFontIconUser';
+import IconFontIconSetup from './IconFontIconSetup';
+export { default as IconFontIconAlipay } from './IconFontIconAlipay';
+export { default as IconFontIconUser } from './IconFontIconUser';
+export { default as IconFontIconSetup } from './IconFontIconSetup';
 
 export type IconNames = 'alipay' | 'user' | 'setup';
 
@@ -20,11 +20,11 @@ interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
 const IconFont: FunctionComponent<Props> = ({ name, ...rest }) => {
   switch (name) {
     case 'alipay':
-      return <IconAlipay {...rest} />;
+      return <IconFontIconAlipay {...rest} />;
     case 'user':
-      return <IconUser {...rest} />;
+      return <IconFontIconUser {...rest} />;
     case 'setup':
-      return <IconSetup {...rest} />;
+      return <IconFontIconSetup {...rest} />;
 
   }
 

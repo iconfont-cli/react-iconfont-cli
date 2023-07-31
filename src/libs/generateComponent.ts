@@ -48,7 +48,7 @@ export const generateComponent = (data: XmlData, config: Config) => {
         (_, value) => value.replace(/^[-_.=+#@!~*]+(.+?)$/, '$1')
       )
       : iconId;
-    const componentName = upperFirst(camelCase(iconId));
+    const componentName = 'IconFont' + upperFirst(camelCase(iconId));
 
     names.push(iconIdAfterTrim);
 

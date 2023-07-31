@@ -7,7 +7,7 @@ const DEFAULT_STYLE = {
   display: 'block',
 };
 
-const IconAlipay = ({ size, color, style: _style, ...rest }) => {
+const IconFontIconAlipay = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
@@ -24,8 +24,8 @@ const IconAlipay = ({ size, color, style: _style, ...rest }) => {
   );
 };
 
-IconAlipay.defaultProps = {
+IconFontIconAlipay.defaultProps = {
   size: 14,
 };
 
-export default IconAlipay;
+export default IconFontIconAlipay;

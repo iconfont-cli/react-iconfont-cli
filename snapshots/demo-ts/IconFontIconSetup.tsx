@@ -13,7 +13,7 @@ const DEFAULT_STYLE: CSSProperties = {
   display: 'block',
 };
 
-const IconSetup: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
+const IconFontIconSetup: FunctionComponent<Props> = ({ size, color, style: _style, ...rest }) => {
   const style = _style ? { ...DEFAULT_STYLE, ..._style } : DEFAULT_STYLE;
 
   return (
@@ -66,8 +66,8 @@ const IconSetup: FunctionComponent<Props> = ({ size, color, style: _style, ...re
   );
 };
 
-IconSetup.defaultProps = {
+IconFontIconSetup.defaultProps = {
   size: 16,
 };
 
-export default IconSetup;
+export default IconFontIconSetup;
