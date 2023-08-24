@@ -13,9 +13,7 @@ export const replaceNames = (content: string, names: string[]) => {
 export const replaceNamesArray = (content: string, names: string[]) => {
   return content.replace(
     /#namesArray#/g,
-    JSON.stringify(names)
-      .replace(/"/g, '\'')
-      .replace(/','/g, '\', \'')
+    JSON.stringify(names).replace(/"/g, "'").replace(/','/g, "', '")
   );
 };
 
@@ -23,12 +21,19 @@ export const replaceComponentName = (content: string, name: string) => {
   return content.replace(/#componentName#/g, name);
 };
 
+export const replaceReactName = (content: string, canImport: boolean) => {
+  return content.replace(/#reactName#/g, canImport ? "React, " : "");
+};
+
 export const replaceSingleIconContent = (content: string, render: string) => {
   return content.replace(/#iconContent#/g, render);
 };
 
 export const replaceImports = (content: string, imports: string[]) => {
-  return content.replace(/#imports#/g, imports.map((item) => `import ${item} from './${item}';`).join('\n'));
+  return content.replace(
+    /#imports#/g,
+    imports.map((item) => `import ${item} from './${item}';`).join("\n")
+  );
 };
 
 export const replaceSizeUnit = (content: string, unit: string) => {
@@ -36,7 +41,10 @@ export const replaceSizeUnit = (content: string, unit: string) => {
 };
 
 export const replaceExports = (content: string, exports: string[]) => {
-  return content.replace(/#exports#/g, exports.map(
-    (item) => `export { default as ${item} } from './${item}';`).join('\n')
+  return content.replace(
+    /#exports#/g,
+    exports
+      .map((item) => `export { default as ${item} } from './${item}';`)
+      .join("\n")
   );
-}
+};
