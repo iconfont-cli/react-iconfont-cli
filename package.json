@@ -1,6 +1,6 @@
 {
-  "name": "react-iconfont-cli",
-  "version": "2.0.2",
+  "name": "@sj-distributor/react-iconfont-cli",
+  "version": "2.1.0",
   "main": "index.js",
   "keywords": [
     "iconfont",
@@ -10,13 +10,13 @@
     "icons",
     "iconfont.cn"
   ],
-  "repository": "git@github.com:iconfont-cli/react-iconfont-cli.git",
-  "author": "范文华 <531362022@qq.com>",
+  "repository": "https://github.com/Simoon-F/react-iconfont-cli",
+  "author": "Simon <simoonf@vip.qq.com>",
   "license": "MIT",
   "bin": {
-    "iconfont": "./commands/help.js",
-    "iconfont-init": "./commands/createJson.js",
-    "iconfont-h5": "./commands/createIcon.js"
+    "sj-iconfont": "./commands/help.js",
+    "sj-iconfont-init": "./commands/createJson.js",
+    "sj-iconfont-h5": "./commands/createIcon.js"
   },
   "peerDependencies": {
     "react": "*"
