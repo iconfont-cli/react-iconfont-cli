@@ -11,7 +11,7 @@ export { default as IconSetup } from './IconSetup';
 
 export type IconNames = 'alipay' | 'user' | 'setup';
 
-interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
+export interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   name: IconNames;
   size?: number;
   color?: string | string[];
