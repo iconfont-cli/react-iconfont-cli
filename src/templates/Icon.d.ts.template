@@ -3,7 +3,7 @@
 import { SVGAttributes, FunctionComponent } from 'react';
 #exports#
 
-interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
+export interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   name: '#names#';
   size?: number;
   color?: string | string[];

@@ -7,7 +7,7 @@ import React, { SVGAttributes, FunctionComponent } from 'react';
 
 export type IconNames = '#names#';
 
-interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
+export interface Props extends Omit<SVGAttributes<SVGElement>, 'color'> {
   name: IconNames;
   size?: number;
   color?: string | string[];
